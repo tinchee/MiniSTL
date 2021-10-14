@@ -24,19 +24,19 @@ make
 
 ## Done
 
-- ✅**Allocator**
-- ✅**iterator**
-- ❎**vector**
+- ✔**Allocator**
+- ✔**iterator**
+- ✔**vector**
 
 ## TODO
 
-- ❌**list**
-- ❌**deque**
-- ❌**stack**
-- ❌**queue**
-- ❌**set**
-- ❌**map**
-- ❌**algorithms**
+- **list**
+- **deque**
+- **stack**
+- **queue**
+- **set**
+- **map**
+- **algorithms**
 
 ## Reference
 
