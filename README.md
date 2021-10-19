@@ -10,8 +10,6 @@ Make sure you have the following tools before running
 
 ```cmake```
 
-```c++```
-
 ## How to run
 
 ```
@@ -20,6 +18,7 @@ mkdir build
 cd build
 cmake ..
 make
+./test
 ```
 
 ## Done
@@ -27,10 +26,10 @@ make
 - ✔**Allocator**
 - ✔**iterator**
 - ✔**vector**
+- ✔**list**
 
 ## TODO
 
-- **list**
 - **deque**
 - **stack**
 - **queue**
