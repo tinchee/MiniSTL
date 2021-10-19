@@ -1,3 +1,6 @@
+#ifndef STL_ALLOC_H
+#define STL_ALLOC_H
+
 #include <new>
 
 namespace ministl
@@ -71,10 +74,10 @@ namespace ministl
 	template<int inst>
 	void* __malloc_alloc_template<inst>::reallocate(void* p, size_t n)
 	{
-		void* res = realloc(p, n);
-		if (res == nullptr)
-			res = oom_relloc(res, n);
-		return res;
+		void* src = realloc(p, n);
+		if (src == nullptr)
+			src = oom_relloc(p, n);
+		return src;
 	}
 
 	typedef __malloc_alloc_template<0> malloc_alloc;
@@ -277,3 +280,5 @@ namespace ministl
 	};
 }
 
+
+#endif // STL_ALLOC_H

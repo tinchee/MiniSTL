@@ -1,3 +1,7 @@
+#ifndef TYPE_TRAITS_H
+#define TYPE_TRAITS_H
+
+
 namespace ministl
 {
 
@@ -166,3 +170,4 @@ namespace ministl
 		typedef __true_type is_POD_type;
 	};
 }
+#endif // !TYPE_TRAITS_H

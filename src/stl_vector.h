@@ -1,9 +1,12 @@
+#ifndef STL_VECTOR_H
+#define STL_VECTOR_H
+
 #include "stl_alloc.h"
 #include "stl_construct.h"
 
 namespace ministl
 {
-	template<typename T, typename Alloc=alloc>
+	template<typename T, typename Alloc = alloc>
 	class _vector
 	{
 	public:
@@ -12,7 +15,7 @@ namespace ministl
 		typedef value_type& reference;
 		typedef ptrdiff_t difference_type;
 		typedef size_t size_type;
-	
+
 		iterator begin() { return start; }
 		iterator end() { return finish; }
 		size_type size() const { return size_type(finish - start); }
@@ -55,7 +58,7 @@ namespace ministl
 		}
 		void fill_initialize(size_t n, const T& value)
 		{
-			start=allocate_and_fill(n, value);
+			start = allocate_and_fill(n, value);
 			finish = start + n;
 			end_of_mem = finish;
 		}
@@ -66,7 +69,7 @@ namespace ministl
 		}
 	};
 
-	template<typename T,typename Alloc>
+	template<typename T, typename Alloc>
 	typename _vector<T, Alloc>::iterator _vector<T, Alloc>::erase(iterator pos)
 	{
 		iterator res = pos;
@@ -80,7 +83,7 @@ namespace ministl
 		return pos;
 	}
 
-	template<typename T,typename Alloc>
+	template<typename T, typename Alloc>
 	void _vector<T, Alloc>::push_back(const T& value)
 	{
 		if (capacity() >= size() + 1)
@@ -110,11 +113,11 @@ namespace ministl
 	}
 
 	template<typename T, typename Alloc>
-	typename _vector<T,Alloc>::iterator _vector<T, Alloc>::insert(iterator pos, const T& value)
+	typename _vector<T, Alloc>::iterator _vector<T, Alloc>::insert(iterator pos, const T& value)
 	{
 		if (capacity() >= size() + 1)
 		{
-			iterator res= finish;
+			iterator res = finish;
 			while (res != pos)
 			{
 				construct(res, *(res - 1));
@@ -170,7 +173,7 @@ namespace ministl
 			resize(count, T());
 		}
 	}
-	
+
 	template<typename T,typename Alloc>
 	void _vector<T, Alloc>::resize(size_type count, const T& value)
 	{
@@ -181,6 +184,11 @@ namespace ministl
 	}
 	*/
 }
+
+
+#endif // !STL_VECTOR_H
+
+
 
 
 

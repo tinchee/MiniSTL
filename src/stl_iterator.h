@@ -1,3 +1,5 @@
+#ifndef STL_ITERATOR_H
+#define STL_ITERATOR_H
 #include <cstddef>
 
 namespace ministl
@@ -56,3 +58,6 @@ namespace ministl
 		return static_cast<typename iterator_traits<Iter>::value_type*>(nullptr);
 	}
 }
+
+#endif // !STL_ITERATOR_H
+

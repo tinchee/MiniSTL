@@ -1,3 +1,6 @@
+#ifndef STL_CONSTRUCT_H
+#define STL_CONSTRUCT_H
+
 #include "stl_iterator.h"
 #include "type_traits.h"
 
@@ -50,3 +53,5 @@ namespace ministl
 		return;
 	}
 }
+#endif // !STL_CONSTRUCT_H
+
