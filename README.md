@@ -27,12 +27,12 @@ make
 - ✔**iterator**
 - ✔**vector**
 - ✔**list**
+- ✔**deque**
+- ✔**queue**
+- ✔**stack**
 
 ## TODO
 
-- **deque**
-- **stack**
-- **queue**
 - **set**
 - **map**
 - **algorithms**
