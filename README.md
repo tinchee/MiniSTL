@@ -23,7 +23,7 @@ make
 
 ## Done
 
-- ✔**Allocator**
+- ✔**allocator**
 - ✔**iterator**
 - ✔**vector**
 - ✔**list**
