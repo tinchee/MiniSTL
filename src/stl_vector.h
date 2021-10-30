@@ -103,7 +103,8 @@ namespace ministl
 				destory(start + i);
 				++new_finish;
 			}
-			deallocate();
+			if(start!=nullptr)
+				deallocate();
 			construct(new_finish, value);
 			++new_finish;
 			start = new_start;
