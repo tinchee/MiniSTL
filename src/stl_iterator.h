@@ -57,6 +57,12 @@ namespace ministl
 	{
 		return static_cast<typename iterator_traits<Iter>::value_type*>(nullptr);
 	}
+
+	template<typename Iter>
+	typename iterator_traits<Iter>::difference_type* distance_type(Iter iter)
+	{
+		return static_cast<typename iterator_traits<Iter>::difference_type*>(0);
+	}
 }
 
 #endif // !STL_ITERATOR_H
