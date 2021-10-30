@@ -413,6 +413,23 @@ void testForStack()
 
 }
 
+void testForPriorityQueue()
+{
+	
+	ministl::priority_queue<int> pq;
+	int ia[9] = { 0,1,2,3,4,8,9,3,5 };
+	std::cout << "Init prioritu_queue: ";
+	for (int i = 0; i < 9; i++)
+		pq.push(ia[i]), std::cout << ia[i] << ' ';
+	std::cout << std::endl;
+	while (!pq.empty())
+	{
+		std::cout << pq.top() << ' ';
+		pq.pop();
+	}
+	std::cout << std::endl;
+}
+
 int main()
 {
 
@@ -431,6 +448,10 @@ int main()
 	std::cout << "................Testing stack.............." << std::endl;
 	testForStack();
 	enter();
+	std::cout << "................Testing priority_queue.............." << std::endl;
+	testForPriorityQueue();
+	enter();
+
 
 	return 0;
 }

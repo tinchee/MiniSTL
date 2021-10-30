@@ -30,6 +30,8 @@ make
 - ✔**deque**
 - ✔**queue**
 - ✔**stack**
+- ✔**heap**
+- ✔**priority_queue
 
 ## TODO
 
