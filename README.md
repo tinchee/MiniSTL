@@ -31,7 +31,7 @@ make
 - ✔**queue**
 - ✔**stack**
 - ✔**heap**
-- ✔**priority_queue
+- ✔**priority_queue**
 
 ## TODO
 
