@@ -10,6 +10,7 @@
 #include <queue>
 #include "stl_stack.h"
 #include <stack>
+#include "stl_set.h"
 
 template<typename iter0, typename iter1>
 void show(iter0 first0, iter0 end0, iter1 first1, iter1 end1)
@@ -418,7 +419,7 @@ void testForPriorityQueue()
 	
 	ministl::priority_queue<int> pq;
 	int ia[9] = { 0,1,2,3,4,8,9,3,5 };
-	std::cout << "Init prioritu_queue: ";
+	std::cout << "Init prioritu_queue:";
 	for (int i = 0; i < 9; i++)
 		pq.push(ia[i]), std::cout << ia[i] << ' ';
 	std::cout << std::endl;
@@ -428,6 +429,38 @@ void testForPriorityQueue()
 		pq.pop();
 	}
 	std::cout << std::endl;
+}
+
+void testForSet()
+{
+	ministl::_set<int> _s;
+	int ia[9] = { 10,7,8,15,5,6,11,13,12};
+	for (int i = 0; i < 9; i++)
+	{
+		_s.insert(ia[i]);
+		//std::cout << std::endl;
+		std::cout << "after insert " << ia[i] << ", the tree number is:" << std::endl;
+		ministl::_set<int>::iterator iter = _s.begin();
+		while (iter != _s.end())
+		{
+			std::cout << *iter << ' ';
+			iter++;
+		}
+		std::cout << std::endl;
+	}
+
+	
+	printTestedApi("find");
+	ministl::_set<int>::iterator iter = _s.find(18);
+	if(iter==_s.end())
+		std::cout << "the end" << std::endl;
+	else
+		std::cout << *iter << std::endl;
+	iter = _s.find(5);
+	if (iter == _s.end())
+		std::cout << "the end" << std::endl;
+	else
+		std::cout << *iter << std::endl;
 }
 
 int main()
@@ -451,7 +484,8 @@ int main()
 	std::cout << "................Testing priority_queue.............." << std::endl;
 	testForPriorityQueue();
 	enter();
-
-
+	std::cout << "................Testing set.............." << std::endl;
+	testForSet();
+	enter();
 	return 0;
 }

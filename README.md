@@ -32,10 +32,10 @@ make
 - ✔**stack**
 - ✔**heap**
 - ✔**priority_queue**
+- ✔**set(only for insert)**
 
 ## TODO
 
-- **set**
 - **map**
 - **algorithms**
 
