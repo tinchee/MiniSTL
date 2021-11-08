@@ -11,6 +11,7 @@
 #include "stl_stack.h"
 #include <stack>
 #include "stl_set.h"
+#include "stl_hash_set.h"
 
 template<typename iter0, typename iter1>
 void show(iter0 first0, iter0 end0, iter1 first1, iter1 end1)
@@ -463,6 +464,61 @@ void testForSet()
 		std::cout << *iter << std::endl;
 }
 
+void testForHashSet()
+{
+	ministl::hash_set<int> hs;
+	int id[9]={3,42,5,64,45,21,32,54,6};
+	for(int i=0;i<9;i++)
+		hs.insert(id[i]);
+	ministl::hash_set<int>::iterator iter;
+	iter=hs.end();
+	for(int i=0;i<9;i++)
+	{
+		ministl::hash_set<int>::iterator tmp=hs.find(id[i]);
+		if(tmp==hs.end())
+			std::cout<<"the value "<<id[i]<<" not found"<<std::endl;
+		else
+		 	std::cout<<"the value "<<*tmp<<" found"<<std::endl;
+	}
+	enter();
+	for(int i=4;i<9;i++)
+	{
+		std::cout<<"erase value "<<id[i]<<std::endl;
+		hs.erase(id[i]);
+	}
+	enter();
+	for(int i=0;i<9;i++)
+	{
+		ministl::hash_set<int>::iterator tmp=hs.find(id[i]);
+		if(tmp==hs.end())
+			std::cout<<"the value "<<id[i]<<" not found"<<std::endl;
+		else
+		 	std::cout<<"the value "<<*tmp<<" found"<<std::endl;
+	}
+	enter();
+	for(int i=0;i<9;i++)
+	{
+		ministl::hash_set<int>::iterator tmp=hs.find(id[i]+2);
+		if(tmp==hs.end())
+			std::cout<<"the value "<<id[i]+2<<" not found"<<std::endl;
+		else
+		 	std::cout<<"the value "<<*tmp<<" found"<<std::endl;
+	}
+	enter();
+	std::cout<<"using iterator visit num"<<std::endl;
+	iter=hs.begin();
+	while(iter!=hs.end())
+	{
+		std::cout<<*iter<<' ';
+		iter++;
+	}
+	enter();
+	std::cout<<"the num count for hash_set is "<<hs.size()<<std::endl;
+	hs.clear();
+	std::cout<<"after clear "<<hs.size()<<std::endl;
+}
+
+
 int main()
 {
 
@@ -486,6 +542,9 @@ int main()
 	enter();
 	std::cout << "................Testing set.............." << std::endl;
 	testForSet();
+	enter();
+	std::cout<<"................Testing hash_set.............."<<std::endl;
+	testForHashSet();
 	enter();
 	return 0;
 }

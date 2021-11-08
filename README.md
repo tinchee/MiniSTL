@@ -33,6 +33,7 @@ make
 - ✔**heap**
 - ✔**priority_queue**
 - ✔**set(only for insert)**
+- ✔**hashset**
 
 ## TODO
 
