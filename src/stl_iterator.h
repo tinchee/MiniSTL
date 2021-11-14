@@ -63,6 +63,12 @@ namespace ministl
 	{
 		return static_cast<typename iterator_traits<Iter>::difference_type*>(0);
 	}
+
+	template<typename Iter>
+	typename iterator_traits<Iter>::iterator_category* iterator_category(Iter iter)
+	{
+		return static_cast<typename iterator_traits<Iter>::iterator_category*>(0);
+	}
 }
 
 #endif // !STL_ITERATOR_H
